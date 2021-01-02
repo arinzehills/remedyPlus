@@ -191,15 +191,13 @@ right:0%; top:10em;height:10em
               </div>
 
             @endforeach
-          </div>
-          <br>
-        <div style="clear:both;position:absolute"></div>
-         <div style="" id="moreproducts">
+          
+       
          <a href="/products"> <button class="bg-white content-start text-blue-600 w-64 m-8 md:p-0 pb-6"> MORE PRODUCTS</button>  
            </a>
          </div>
            
-    <div style="clear:both;  " id="down" >
+    <div style="clear:both;" id="down" >
   @include('inc/footer')
   </div>
    </body>
