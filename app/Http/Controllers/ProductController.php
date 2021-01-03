@@ -23,7 +23,7 @@ class ProductController extends Controller
             $categoryName= optional($categories->where('slug', request()->category)->first())->name;
         }
         else{
-            $products= Product::inRandomOrder()->take(10)->paginate(10);
+            $products= Product::take(10)->paginate(10);
             
             $categoryName='Products Card';
         }

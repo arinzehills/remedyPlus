@@ -31,7 +31,9 @@
         <style>
             
         </style>
-<table class="table-auto m-8 md:ml-16 border-separate border border-blue-600 overflow-ellipsis text-white"  style="background:blue">
+<!--items saved on cart-->
+<table class="table-auto m-1 md:ml-16 border-separate border border-blue-600 overflow-ellipsis text-white"
+  style="background:blue">
         <thead>
             <tr>
             <th class="text-left w-1/2">ITEM</th>
@@ -159,12 +161,13 @@
 
  <p class="text-2xl md:ml-16"> More Products Related To This</p>
  @foreach ($mightAlsoLike  as $product)
-            <div class="bg-blue-600 rounded-lg border md:m-16 w-80 h-auto float-left ">
+            <div class=" rounded-lg border m-8 w-60 h-84 float-left text-white" 
+            data-aos-duration="2000" data-aos="fade-up" style="background:blue">
                 
-                    <img src="{{$product->image}}" alt="Denim Jeans" >
+                    <img src="{{$product->image}}" alt="Denim Jeans" class="md:h-40 md:w-32 md:ml-16">
                   <h3 class="p-1"> <a href="/products/{{$product->id}}">{{$product->name}}</a></h3>
                   <div >
-                      <p style="" class="p-2">price : {{$product->price}} </p>
+                      <p style="" class="p-2">Price : {{$product->price}} </p>
                   </div>
                   <div class="">
                   </div>
@@ -178,8 +181,8 @@
                     {{csrf_field()}}
                     <input type="hidden" name="id" value="{{$product->id}}">
                     <input type="hidden" name="name" value="{{$product->name}}">
-                    <input type="hidden" name="price" value="{{ $product->price}}">
-                    <button class="bg-white content-start ml-8  mt-8 lg:w-64 md:w-auto w-52 text-blue-600 lg:p-0 pb-6 pt-1
+                    <input type="hidden" name="price" value="{{$product->price}}">
+                    <button class="bg-white content-start ml-4  mt-2 lg:w-52 md:w-auto w-52 text-blue-600 lg:p-0 pb-6 pt-1
                      p-2 fa fa-cart-arrow-down"> 
                     ADD TO CART
                     </button> 
@@ -187,6 +190,8 @@
                   </div>
                   
             </div>
+          
+     
           
         @endforeach
  <div style="clear:both" class="lg:m-0 mt-16">
