@@ -32,7 +32,7 @@
             
         </style>
 <!--items saved on cart-->
-<table class="table-auto m-1 md:ml-16 border-separate border border-blue-600 overflow-ellipsis text-white"
+<table class="table-auto m-1 md:ml-16 border-separate border border-blue-600 overflow-ellipsis text-white w-20 md:w-auto"
   style="background:blue">
         <thead>
             <tr>
