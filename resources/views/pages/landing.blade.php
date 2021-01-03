@@ -86,8 +86,8 @@ font-size:33px;width:190px; border-radius:30px;
 @media only screen and (max-device-width: 793px)
        {
              section{
-               top:30px;  position:absolute;  dislay:flex; border-radius:5px;
-     background: linear-gradient(135deg,blue,cyan);width:105%;
+               top:30px;  position:absolute;  display:flex; border-radius:5px;
+     background: linear-gradient(135deg,blue,cyan);width:100%;
       height:60vh; 
             }
                 section:before{
@@ -109,9 +109,10 @@ font-size:33px;width:190px; border-radius:30px;
      
     }
     #down{
-       position:absolute;
+     position:absolute;
       width:100%;
-      top:400%;
+      top:300%;
+    
     }
     #lol{
 right:0%; top:10em;height:10em
@@ -198,8 +199,9 @@ right:0%; top:10em;height:10em
          </div>
            
     <div style="clear:both;" id="down" >
-  @include('inc/footer')
+@include('inc/footer')
   </div>
+  
    </body>
     </html>
      @section('contents')
