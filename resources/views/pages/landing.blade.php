@@ -111,7 +111,7 @@ font-size:33px;width:190px; border-radius:30px;
     #down{
      position:absolute;
       width:100%;
-      top:300%;
+      top:400%;
     
     }
     #lol{
