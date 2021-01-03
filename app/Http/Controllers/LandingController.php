@@ -9,7 +9,7 @@ class LandingController extends Controller
 {
     //
     public function index(){
-        $products= Product::inRandomOrder()->take(10)->get();
+        $products= Product::take(10)->get();
         $categories=Category::all();
 
         return view('pages.landing', [

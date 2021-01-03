@@ -54,13 +54,39 @@ font-size:33px;width:190px; border-radius:30px;
       border-width:4px; color:blue;
       justify-content:center;
 }
+ #lol{
+             right:35%;position:absolute; top:6em;height:30em
+            }
+/*for mid screens */
+
 @media only screen and (min-device-width: 554px)
         and (max-device-width: 793px) and (-webkit-min-device-pixel-ratio: 1){
-            .lol{
-              height:15em;
+           
+             #lol{
+             right:5%;position:absolute; top:2em;height:20em
             }
-}
-@media only screen and (min-device-width: 595px)
+             #down{
+      position:absolute;
+      width:100%;
+      top:510%;
+    
+    }
+    .product{
+              top:20em; position:absolute; color:blue; left: 32%;
+            }
+         section{
+               top:30px; right:1em; position:absolute; margin:10px; dislay:flex; border-radius:30px;
+     background: blue ;width:50%;
+      height:70vh;  -ms-transform: skewY(0deg); /* IE 9 */
+  transform: skewx(-20deg);
+            }
+            #products-div{
+              top:24em;
+               position:absolute;
+            }
+    }
+/*for mid and higher screens */
+@media only screen and (min-device-width: 795px)
         and (-webkit-min-device-pixel-ratio: 1){
             section{
                top:30px; right:4em; position:absolute; margin:20px; dislay:flex; border-radius:30px;
@@ -81,8 +107,11 @@ font-size:33px;width:190px; border-radius:30px;
       position:absolute;top:180%;
       margin-bottom:3em;  
     }
+     #products-div{
+    top:37em; position:absolute;
+    }
 }
-
+/* for android screens */
 @media only screen and (max-device-width: 593px)
        {
              section{
@@ -115,11 +144,14 @@ font-size:33px;width:190px; border-radius:30px;
     
     }
     #lol{
-right:0%; top:10em;height:10em
+right:35%; top:5em;height:30em
     }
     #moreproducts{
       position:absolute;top:390%;
       margin-bottom:3em;  
+    }
+     #products-div{
+    top:35em; position:absolute;
     }
 }
 
@@ -132,7 +164,7 @@ right:0%; top:10em;height:10em
      <section style="">
           </section>
            <img src="{{asset('/img/rubber.png')}}" id="lol" class="lol ml-32 md:ml-0" 
-           style="right:35%;position:absolute; top:6em;height:30em">
+           style="">
          <div id="sect" style="top:30px;margin:30px; left:3px;font-weight:100px; position:absolute;">
             <h1 class="md:text-6xl text-3xl font-bold " id="head-text" style=" line-height: 150%;"> 
             YOUR HEALTH, YOUR <br>
@@ -162,10 +194,12 @@ right:0%; top:10em;height:10em
               <p style="font-size:40px; font-weight:bold" id="product"> PRODUCTS   </p>
         </div>
 
-        <div  style="top:37em; position:absolute;" class="md:ml-16">
+        <div  style="" id="products-div" class="md:ml-16">
               
             @foreach ($products as $product)
-              <div class="text-white rounded-lg border md:w-52 w-36 h-auto md:h-64  mb-2 ml-20 float-left" 
+            
+                 
+              <div class="text-white rounded-lg border  md:w-52 w-36 h-auto md:h-64  mb-2 md:ml-20 ml-8 float-left" 
                           style=" background:blue;margin:1em;float:left; " data-aos-duration="2000" data-aos="fade-up">
                    <img src="{{$product->image}}" alt="Denim Jeans" class="md:h-28 md:w-28 md:ml-16" >
                   <h3 class="p-1 text-sm"> <a href="/products/{{$product->id}}">{{$product->name}}</a></h3>
@@ -190,8 +224,9 @@ right:0%; top:10em;height:10em
                   
 
               </div>
-
+            
             @endforeach
+            
           
        
          <a href="/products"> <button class="bg-white content-start text-blue-600 w-64 m-8 md:p-0 pb-6"> MORE PRODUCTS</button>  

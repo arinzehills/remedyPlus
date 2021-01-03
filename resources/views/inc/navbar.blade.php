@@ -134,13 +134,13 @@
 #mobile-icons{
   display:none;
 }
-@media only screen and (min-device-width: 793px)
+@media only screen and (min-device-width: 595px)
        {
               #mobile-menu{
                 display:none;
               }
        }
-@media only screen and (max-device-width: 793px)
+@media only screen and (max-device-width: 593px)
        {
          header  .logo{
              top:4px;
