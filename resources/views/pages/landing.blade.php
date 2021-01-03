@@ -67,8 +67,8 @@ font-size:33px;width:190px; border-radius:30px;
             }
              #down{
       position:absolute;
-      width:100%;
-      top:510%;
+      width:110%;
+      top:570%;
     
     }
     .product{
@@ -140,14 +140,14 @@ font-size:33px;width:190px; border-radius:30px;
     #down{
      position:absolute;
       width:100%;
-      top:400%;
+      top:370%;
     
     }
     #lol{
 right:35%; top:5em;height:30em
     }
     #moreproducts{
-      position:absolute;top:390%;
+      position:absolute;top:380%;
       margin-bottom:3em;  
     }
      #products-div{
