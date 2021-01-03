@@ -60,7 +60,7 @@ font-size:33px;width:190px; border-radius:30px;
               height:15em;
             }
 }
-@media only screen and (min-device-width: 793px)
+@media only screen and (min-device-width: 595px)
         and (-webkit-min-device-pixel-ratio: 1){
             section{
                top:30px; right:4em; position:absolute; margin:20px; dislay:flex; border-radius:30px;
@@ -83,7 +83,7 @@ font-size:33px;width:190px; border-radius:30px;
     }
 }
 
-@media only screen and (max-device-width: 793px)
+@media only screen and (max-device-width: 593px)
        {
              section{
                top:30px;  position:absolute;  display:flex; border-radius:5px;
@@ -166,7 +166,7 @@ right:0%; top:10em;height:10em
               
             @foreach ($products as $product)
               <div class="text-white rounded-lg border md:w-52 w-36 h-auto md:h-64  mb-2 ml-20 float-left" 
-                          style=" background:blue;margin:1em;float:left; ">
+                          style=" background:blue;margin:1em;float:left; " data-aos-duration="2000" data-aos="fade-up">
                    <img src="{{$product->image}}" alt="Denim Jeans" class="md:h-28 md:w-28 md:ml-16" >
                   <h3 class="p-1 text-sm"> <a href="/products/{{$product->id}}">{{$product->name}}</a></h3>
                   <div >
@@ -205,6 +205,8 @@ right:0%; top:10em;height:10em
    </body>
     </html>
      @section('contents')
-    @section('footer')
-    
+    @section('extra_js')
+    <script>
+  AOS.init();
+</script>
     @endsection
