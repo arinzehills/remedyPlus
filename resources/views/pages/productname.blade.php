@@ -50,7 +50,8 @@
         </div>
                <p class="text-2xl ml-16"> More Products Related To This</p>
             @foreach ($mightAlsoLike as $product)
-            <div class=" rounded-lg border m-8 w-60 h-84 float-left text-white" style="background:blue">
+            <div class=" rounded-lg border m-8 w-60 h-84 float-left text-white" style="background:blue"
+             data-aos-duration="2000" data-aos="fade-up">
                 
                     <img src="{{$product->image}}" alt="Denim Jeans" class="md:h-40 md:w-32 md:ml-16">
                   <h3 class="p-1"> <a href="/products/{{$product->id}}">{{$product->name}}</a></h3>

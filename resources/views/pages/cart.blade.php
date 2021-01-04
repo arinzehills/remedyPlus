@@ -6,12 +6,12 @@
         <div class="mt-16 ml-8">
                 <div class="">
                 @if(session()->has('success_message'))
-                    <div class="text-green-600 font-bold p-3">
+                    <div class="text-green-600 font-bold ml-8 p-3">
                     {{session()->get('success_message')}}                
                     </div>
                 @endif
                 @if (count($errors)>0)
-                    <div class="bg-red-300 p-3">
+                    <div class="bg-red-300 p-3 ml-8">
                     <ul>
                     @foreach ($errors->all() as $error)
                         <li>{{$error}}</li>
@@ -36,24 +36,24 @@
   style="background:blue">
         <thead>
             <tr>
-            <th class="text-left w-1/2 md:text-lg text-sm">ITEM</th>
-            <th  class="md:text-lg text-sm ">QUANTITY</th>
-            <th class="md:text-lg text-sm ">UNIT PRICE</th>
-            <th class="md:text-lg text-sm ">SUB TOTAL</th>
+            <th class="text-left w-1/2 md:text-base text-sm">ITEM</th>
+            <th  class="md:text-base text-sm ">QUANTITY</th>
+            <th class="md:text-base text-sm ">UNIT PRICE</th>
+            <th class="md:text-base text-sm ">SUB TOTAL</th>
             </tr>
         </thead>
         <tbody>
           @foreach (Cart::content() as $item)
             <tr>
           
-            <td class="border flex text-sm ">
+            <td class="border flex text-sm md:text-base">
           
            
             <a href="{{route('products.show',$item->model->id)}}">
              <img style="height:100px;weight:100px" src="{{$item->model->image}}"></a>
              {{$item->model->name}}
             </td>
-            <td  class="border m-6 w-8 text-sm ">
+            <td  class="border m-6 w-8 text-sm md:text-base">
                             <select class="quantity text-blue-600 m-6 mb-1" data-id="{{$item->rowId}}">
                             @for ($i=1; $i<10 +1; $i++)
                                 <option  {{$item->qty == $i ? 'selected': ''}}>{{$i}}</option>
@@ -73,7 +73,7 @@
                     </form>
                             
             </td>
-            <td  class="border text-center text-sm ">{{'N'. $item->model->price}}<br>
+            <td  class="border text-center md:text-base text-sm ">{{'N'. $item->model->price}}<br>
              <form action="{{route('cart.save', $item->rowId)}}" method="POST">
                     {{csrf_field()}}
                     <button type="submit" class="border-0  "> 
@@ -81,7 +81,7 @@
                     </button> 
                     </form>
             </td>
-             <td  class="border text-sm ">{{'N'. $item->subtotal}}</td>
+             <td  class="border md:text-base text-sm ">{{'N'. $item->subtotal}}</td>
             </tr>
                  
             @endforeach
@@ -126,7 +126,7 @@
              {{$item->model->name}}
             </td>
             <td  class="border m-6 w-8">
-                            <select class="quantity text-blue-600 m-6 mb-1" >
+                            <select class="quantity text-blue-600 m-6 mb-1" data-id="{{$item->rowId}}">
                                 <option {{$item->qty == 1 ? 'selected': ''}} >1</option>
                                 <option {{$item->qty == 2 ? 'selected': ''}} >2</option>
                                 <option {{$item->qty == 3 ? 'selected':''}} >3</option>
@@ -138,11 +138,13 @@
                     {{method_field('DELETE')}}
                     <button type="submit" class="bg-white content-start ml-2 mt-4 w-24 text-blue-600 "> 
                   <p class="fa fa-trash"> Remove</p>  
+                  </button>
+                  </form>
                             
             </td>
             <td  class="border text-center">{{'N'. $item->model->price}}
-             <form action="{{route('SaveForLater.switchToCart', $item->rowId)}}" method="POST">
-                    {{csrf_field()}}
+           <form action="{{route('SaveForLater.switchToCart', $item->rowId)}}" method="POST">
+                        {{csrf_field()}}
                     <button type="submit" class="border-0  "> 
                   <p class="fa fa-heart text-white"> Move to Cart</p> 
                     </button> 

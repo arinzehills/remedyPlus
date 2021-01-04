@@ -34,8 +34,8 @@ Route::patch('/cart/{id}', [CartController::class, 'update'])->name('cart.update
 Route::delete('/cart/{id}', [CartController::class, 'destroy'])->name('cart.destroy');
 Route::post('/cart/saveForLater/{id}', [CartController::class, 'saveForLater'])->name('cart.save');
 
-Route::post('/SwitchToCart/{product}', [SaveForLaterController::class, 'switchToCart'])->
-name('SaveForLater.switchToCart');
+Route::post('/SwitchToCart/{product}', [saveForLaterController::class, 'switchToCart'])->
+            name('SaveForLater.switchToCart');
 Route::delete('/saveForLater/{id}', [SaveForLaterController::class, 'destroy'])->name('SaveForLater.destroy');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

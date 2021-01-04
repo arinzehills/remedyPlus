@@ -54,6 +54,7 @@ font-size:33px;width:190px; border-radius:30px;
       border-width:4px; color:blue;
       justify-content:center;
 }
+
  #lol{
              right:35%;position:absolute; top:6em;height:30em
             }
@@ -100,7 +101,7 @@ font-size:33px;width:190px; border-radius:30px;
              #down{
       position:absolute;
       width:100%;
-      top:210%;
+      top:220%;
     
     }
      #moreproducts{
@@ -175,8 +176,14 @@ right:35%; top:5em;height:30em
             pharmaceutical products and snacks and <br>
             enjoy your health
             <p>
+            @guest
               <a href="/products"><button class="landingbtn mb-8 md:pb-14 md:m-8 md:ml-2" style="">ORDER</button></a>
        <a href="/checkout"><button  class="landingbtn md:pb-14 md:ml-16;">SIGN UP</button></a>
+            @else 
+              <a href="/products"><button class="landingbtn mb-8 md:pb-14 md:m-8 mt-12 md:ml-2 border-none text-white"
+               style="background: linear-gradient(135deg,blue,cyan);">SHOP</button></a>
+              
+            @endguest
         </div>
 
       
@@ -243,5 +250,5 @@ right:35%; top:5em;height:30em
     @section('extra_js')
     <script>
   AOS.init();
-</script>
+    </script>
     @endsection
