@@ -32,29 +32,28 @@
             
         </style>
 <!--items saved on cart-->
-<table class="table-auto m-1 md:ml-16 border-separate border border-blue-600 overflow-hidden
- text-white w-20 md:h-auto h-8 md:w-auto"
+<table class="table-auto m-1 md:ml-16 border-separate border border-blue-600 overflow-ellipsis text-white w-20 md:w-auto"
   style="background:blue">
         <thead>
             <tr>
-            <th class="text-left w-1/2">ITEM</th>
-            <th  class=" w-1/8">QUANTITY</th>
-            <th>UNIT PRICE</th>
-            <th>SUB TOTAL</th>
+            <th class="text-left w-1/2 md:text-lg text-sm">ITEM</th>
+            <th  class="md:text-lg text-sm ">QUANTITY</th>
+            <th class="md:text-lg text-sm ">UNIT PRICE</th>
+            <th class="md:text-lg text-sm ">SUB TOTAL</th>
             </tr>
         </thead>
         <tbody>
           @foreach (Cart::content() as $item)
             <tr>
           
-            <td class="border flex ">
+            <td class="border flex text-sm ">
           
            
             <a href="{{route('products.show',$item->model->id)}}">
              <img style="height:100px;weight:100px" src="{{$item->model->image}}"></a>
              {{$item->model->name}}
             </td>
-            <td  class="border m-6 w-8">
+            <td  class="border m-6 w-8 text-sm ">
                             <select class="quantity text-blue-600 m-6 mb-1" data-id="{{$item->rowId}}">
                             @for ($i=1; $i<10 +1; $i++)
                                 <option  {{$item->qty == $i ? 'selected': ''}}>{{$i}}</option>
@@ -74,7 +73,7 @@
                     </form>
                             
             </td>
-            <td  class="border text-center">{{'N'. $item->model->price}}<br>
+            <td  class="border text-center text-sm ">{{'N'. $item->model->price}}<br>
              <form action="{{route('cart.save', $item->rowId)}}" method="POST">
                     {{csrf_field()}}
                     <button type="submit" class="border-0  "> 
@@ -82,7 +81,7 @@
                     </button> 
                     </form>
             </td>
-             <td  class="border ">{{'N'. $item->subtotal}}</td>
+             <td  class="border text-sm ">{{'N'. $item->subtotal}}</td>
             </tr>
                  
             @endforeach
