@@ -105,27 +105,27 @@
      <style>
             
         </style>
-<table class="table-auto m-8 md:ml-16 border-separate border border-blue-600 overflow-ellipsis text-white"  style="background:blue">
+<table class="table-auto m-2 md:ml-16 border-separate border border-blue-600 overflow-ellipsis text-white"  style="background:blue">
         <thead>
             <tr>
-            <th class="text-left w-1/2">ITEM</th>
-            <th  class=" w-1/8">QUANTITY</th>
-            <th>UNIT PRICE</th>
-            <th>SUB TOTAL</th>
+            <th class="text-left w-1/2 md:text-base text-sm">ITEM</th>
+            <th  class=" w-1/8 md:text-base text-sm">QUANTITY</th>
+            <th class="md:text-base text-sm">UNIT PRICE</th>
+            <th class="md:text-base text-sm">SUB TOTAL</th>
             </tr>
         </thead>
         <tbody>
           @foreach (Cart::instance('saveForLater')->content() as $item)
             <tr>
           
-            <td class="border flex ">
+            <td class="border flex text-sm md:text-base">
           
            
             <a href="{{route('products.show',$item->model->id)}}">
              <img style="height:100px;weight:100px" src="{{$item->model->image}}"></a>
              {{$item->model->name}}
             </td>
-            <td  class="border m-6 w-8">
+            <td  class="border text-sm md:text-base m-6 w-8">
                             <select class="quantity text-blue-600 m-6 mb-1" data-id="{{$item->rowId}}">
                                 <option {{$item->qty == 1 ? 'selected': ''}} >1</option>
                                 <option {{$item->qty == 2 ? 'selected': ''}} >2</option>
@@ -142,14 +142,14 @@
                   </form>
                             
             </td>
-            <td  class="border text-center">{{'N'. $item->model->price}}
+            <td  class="border text-sm md:text-base text-center">{{'N'. $item->model->price}}
            <form action="{{route('SaveForLater.switchToCart', $item->rowId)}}" method="POST">
                         {{csrf_field()}}
                     <button type="submit" class="border-0  "> 
                   <p class="fa fa-heart text-white"> Move to Cart</p> 
                     </button> 
                     </form></td>
-             <td  class="border ">{{'N'. $item->subtotal}}</td>
+             <td  class="border text-sm md:text-base">{{'N'. $item->subtotal}}</td>
             </tr>
                  
             @endforeach

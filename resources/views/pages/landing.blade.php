@@ -102,8 +102,7 @@ font-size:33px;width:190px; border-radius:30px;
       position:absolute;
       width:100%;
       top:220%;
-    
-    }
+                 }
      #moreproducts{
       position:absolute;top:180%;
       margin-bottom:3em;  

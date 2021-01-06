@@ -10,6 +10,8 @@ use Laravel\Passport\HasApiTokens;
     use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends \TCG\Voyager\Models\User
+
+
 {
     use HasFactory, Notifiable,SoftDeletes, HasApiTokens;
 

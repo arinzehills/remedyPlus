@@ -37,9 +37,7 @@ Route::post('/cart/saveForLater/{id}', [CartController::class, 'saveForLater'])-
 Route::post('/SwitchToCart/{product}', [saveForLaterController::class, 'switchToCart'])->
             name('SaveForLater.switchToCart');
 Route::delete('/saveForLater/{id}', [SaveForLaterController::class, 'destroy'])->name('SaveForLater.destroy');
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
+
 
 Route::get('/dashboard', function () {
     $categories=Category::all();
@@ -47,7 +45,12 @@ Route::get('/dashboard', function () {
     return view('dashboard', [
         'categories'=>$categories]);
     })->middleware(['auth'])->name('dashboard');
+    //admin routes
 
+    Route::group(['prefix' => 'admin'], function () {
+        Voyager::routes();
+    });
+    
 require __DIR__.'/auth.php';
 
 /* Route::get('/', function () {

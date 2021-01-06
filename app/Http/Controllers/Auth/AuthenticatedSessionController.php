@@ -39,8 +39,8 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-        session()->put('previousUrl',url()->previous());
-        return redirect(RouteServiceProvider::HOME);
+        
+        return redirect()->intended();
     }
 
     /**
@@ -57,6 +57,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
         session()->put('previousUrl',url()->previous());
-        return redirect('/');
+        return redirect()->intended();
     }
 }

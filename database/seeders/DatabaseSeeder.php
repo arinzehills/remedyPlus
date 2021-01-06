@@ -3,9 +3,14 @@
 namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use TCG\Voyager\Traits\Seedable;
+use Illuminate\Database\Seeds;
 
 class DatabaseSeeder extends Seeder
 {
+   
+    use Seedable;
+    protected $seedersPath = __DIR__.'/';
     /**
      * Seed the application's database.
      *
@@ -21,6 +26,8 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             CategoryTableSeeder::class,
             ProductsTableSeeder::class,
-          ]);
+         
+                ]);
+
     }
 }
