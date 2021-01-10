@@ -32,7 +32,7 @@
             
         </style>
 <!--items saved on cart-->
-<table class="table-auto m-2 md:ml-16 border-separate border border-blue-600 overflow-ellipsis text-white w-20 md:w-auto"
+<table data-aos="zoom-in-left"  data-aos-duration="3000" class="table-auto m-2 md:ml-16 border-separate border border-blue-600 overflow-ellipsis text-white w-20 md:w-auto"
   style="background:blue">
         <thead>
             <tr>
@@ -105,7 +105,7 @@
      <style>
             
         </style>
-<table class="table-auto m-2 md:ml-16 border-separate border border-blue-600 overflow-ellipsis text-white"  style="background:blue">
+<table  data-aos="zoom-in-right"  data-aos-duration="3000" class="table-auto m-2 md:ml-16 border-separate border border-blue-600 overflow-ellipsis text-white"  style="background:blue">
         <thead>
             <tr>
             <th class="text-left w-1/2 md:text-base text-sm">ITEM</th>

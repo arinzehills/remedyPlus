@@ -20,4 +20,5 @@ class CategoryTableSeeder extends Seeder
                 ['name'=>'Snacks','slug'=>'snacks', 'created_at'=>$now,'updated_at'=>$now],
         ]);
     }
+    
 }

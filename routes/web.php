@@ -21,6 +21,7 @@ use App\Http\Controllers\CheckoutController;
 
 Route::get('/', [LandingController::class, 'index'])->name('landing');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout')->middleware('auth');
+Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
 
 Route::get('/continue', [CheckoutController::class, 'index'])->name('continue');
 
@@ -37,6 +38,8 @@ Route::post('/cart/saveForLater/{id}', [CartController::class, 'saveForLater'])-
 Route::post('/SwitchToCart/{product}', [saveForLaterController::class, 'switchToCart'])->
             name('SaveForLater.switchToCart');
 Route::delete('/saveForLater/{id}', [SaveForLaterController::class, 'destroy'])->name('SaveForLater.destroy');
+
+Route::post('/thankyou', [PagesController::class, 'thankyou'])->name('thankyou');
 
 
 Route::get('/dashboard', function () {

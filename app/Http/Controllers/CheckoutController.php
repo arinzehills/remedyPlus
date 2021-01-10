@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
-
+use Cart;
 class CheckoutController extends Controller
 {
     /**
@@ -38,7 +38,107 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+     
+
+  $url = "https://api.paystack.co/transaction/initialize";
+
+  $fields = [
+
+    'email' => auth()->user()->email,
+
+    'amount' => Cart::total() * 100,
+
+  ];
+
+  $fields_string = http_build_query($fields);
+
+  //open connection
+
+  $ch = curl_init();
+
+  
+
+  //set the url, number of POST vars, POST data
+
+  curl_setopt($ch,CURLOPT_URL, $url);
+
+  curl_setopt($ch,CURLOPT_POST, true);
+
+  curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+
+    "Authorization: Bearer sk_test_8cb0e758304ba077174e8dfe52ef9706d87efe82",
+
+    "Cache-Control: no-cache",
+
+  ));
+ 
+
+  //So that curl_exec returns the contents of the cURL; rather than echoing it
+
+  curl_setopt($ch,CURLOPT_RETURNTRANSFER, true); 
+
+  //execute post
+  $result = curl_exec($ch);
+  echo $result;
+
+  $res = json_decode($result);
+
+  if($res->status == 'true'){
+    $link=$res->data->authorization_url;
+    return redirect($link);
+  }
+  else{
+    return redirect()->route('checkout')->with('success_message', 'No items given');
+  }
+
+
+      /*  $request= [
+            'tx_ref' =>time(),
+            'amount' => Cart::total(),
+            'currency'=>'NGN',
+            'redirect_url'=>route('thankyou'),
+            'payments_options'=>'card',
+            'customer'=>[
+              'email'=> auth()->user()->email,
+              'name'=> auth()->user()->name,
+                     ],
+            ' customizations,'=>[
+          'title'=> "Remedy plus",
+          'description'=> "Payment for items in cart",
+          'logo' => asset('img/logo.png'),
+            ],
+            'meta'=>[
+              'price'=> Cart::total(),
+               'email'=> auth()->user()->email
+            ],
+          ];
+  
+          $curl = curl_init();
+  
+  curl_setopt_array($curl, array(
+    CURLOPT_URL => "https://api.flutterwave.com/v3/transactions/123456/verify",
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => "",
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 0,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => "GET",
+    CURLOPT_POSTFIELDS => json_encode($request),
+    CURLOPT_HTTPHEADER => array(
+      "Content-Type: application/json",
+      "Authorization: Bearer FLWSECK_TEST-1090b4e5393b92f0887e4ff3b7978a94-X"
+    ),
+  ));
+  
+  $response = curl_exec($curl);
+  
+  curl_close($curl);
+ 
+  echo $response;
+  */
     }
 
     /**
@@ -50,6 +150,8 @@ class CheckoutController extends Controller
     public function show($id)
     {
         
+       
+      
     }
 
     /**
@@ -83,6 +185,6 @@ class CheckoutController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
 }

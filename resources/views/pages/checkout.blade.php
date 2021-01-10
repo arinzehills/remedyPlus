@@ -13,24 +13,27 @@
  <div class="m-4 md:flex" style="background:blue">
       <div class="md:ml-0 lg:w-84 place-items-center bg-white md:p-12 lg:ml-32">
            <h1 class="text-xl font-semibold">Hello there 👋, <span class="font-normal">Fill your Billing Details</span></h1>
-    <form class="lg:mt-6 lg:w-84">
-      <label for="firstname" class="block text-xs font-semibold text-gray-600 uppercase">Name</label>
+    <form class="lg:mt-6 lg:w-84" id="paymentForm" name="form" method="POST" action="{{route('checkout.store')}}">
+    {{csrf_field()}}
+         <input type="hidden" name="amount" id="amount" value="{{Cart::total()}}">
+      <label for="name" class="block text-xs font-semibold text-gray-600 uppercase">Name</label>
           <input id="firstname"  value="{{auth()->user()->name}}"
-          type="text" name="name" placeholder="Full Name"  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner" required />
+          type="text" name="name" placeholder="Full Name"  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"  />
       <label for="Phone" class="block text-xs font-semibold text-gray-600 uppercase">Phone</label>
-          <input id="phone" type="text" name="name" placeholder="Full Name"  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 " required />
+          <input id="phone" type="text" placeholder="Phone"  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 "  />
        <label for="email" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">E-mail</label>
-       <input id="email" type="email" name="email" placeholder="john.doe@company.com" autocomplete="email" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200" value="{{auth()->user()->email}}" readonly/>
+       <input id="email" type="email" name="email" autocomplete="email" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200" value="{{auth()->user()->email}}" readonly/>
        
        <label for="address" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Address</label>
-      <input id="address" type="text" name="name" placeholder="address"  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 " required />
+      <input  type="text" name="name" placeholder="address"  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 " />
       
       <label for="State" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">State</label>
-      <input id="State" type="text" name="name" placeholder="State"  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200" required />
-       <label for="password-confirm" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">City</label>
-       <input id="firstname" type="text" name="name" placeholder="City"  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 " required />
-      <button type="submit" class="w-full mt-6 font-medium text-blue-700 uppercase shadow-lg"><a href="">
-        Save and continue</a>
+      <input  placeholder="State"  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200" />
+       <label class="block mt-2 text-xs font-semibold text-gray-600 uppercase">City</label>
+       <input  type="text" placeholder="City"  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 "  />
+        
+      <button type="submit" Name="pay" class="w-full mt-6 font-medium text-blue-700 uppercase shadow-lg" >
+        Save and continue
       </button> 
       
     </form>
@@ -42,14 +45,20 @@
        @foreach (Cart::content() as $item)       
        <div class="divide-solid"><a><img style="height:100px;weight:100px" src="{{$item->model->image}}"></a>
              {{$item->model->name}}  </div>
-        <div class="divide-solid"> {{$item->model->name}}  </div>
-        <div class="divide-solid">{{$item->model->price}}  </div>
+           <div class="divide-solid">Price: {{$item->model->price}} </div>
         <hr>
        @endforeach
+        <p class="text-right text-blue-600 mt-8">Total: {{Cart::total()}}</p>
         </div>
     </div>
-        
+       
  <div style="clear:both" class="mt-16">
   @include('inc/footer')
   <div>
+  
+  <script>
+
+
+   
+</script>
 @endsection

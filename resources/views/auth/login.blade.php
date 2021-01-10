@@ -55,15 +55,15 @@
                     </a>
                 @endif
                 <br>
-                 <a class="underline md:ml-24 text-sm hidden md:inline-flex text-gray-600 hover:text-blue-600" href="{{ route('register') }}">
-                    {{ __('Already have an account?') }}
+                 <a class="underline md:ml-12 text-sm hidden md:inline-flex text-gray-600 hover:text-blue-600" href="{{ route('register') }}">
+                    {{ __("Don't have an account? Register") }}
                     </a>
 
             </div>
 
             <br> 
             <a class="underline md:ml-24 text-sm inline-flex md:hidden text-gray-600 hover:text-blue-600" href="{{ route('register') }}">
-            {{ __('Already have an account?') }}
+            {{ __("Don't have an account? Register") }}
             </a>
         </form>
     </x-auth-card>
