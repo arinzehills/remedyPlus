@@ -39,7 +39,7 @@ Route::post('/SwitchToCart/{product}', [saveForLaterController::class, 'switchTo
             name('SaveForLater.switchToCart');
 Route::delete('/saveForLater/{id}', [SaveForLaterController::class, 'destroy'])->name('SaveForLater.destroy');
 
-Route::post('/thankyou', [PagesController::class, 'thankyou'])->name('thankyou');
+Route::get('/thankyou', [PagesController::class, 'thankyou'])->name('thankyou');
 
 
 Route::get('/dashboard', function () {
