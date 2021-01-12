@@ -87,7 +87,10 @@ class CheckoutController extends Controller
 
   if($res->status == 'true'){
     $link=$res->data->authorization_url;
+    
     return redirect($link);
+
+
   }
   else{
     return redirect()->route('checkout')->with('success_message', 'No items given');

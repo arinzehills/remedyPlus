@@ -177,7 +177,7 @@ right:35%; top:5em;height:30em
             <p>
             @guest
               <a href="/products"><button class="landingbtn mb-8 ml-32 md:pb-14 md:m-8 md:ml-2" style="">ORDER</button></a>
-       <a href="/checkout"><button  class="landingbtn md:pb-14 ml-32 md:ml-16;">SIGN UP</button></a>
+       <a href="/checkout"><button  class="landingbtn md:pb-14 ml-32 md:ml-12">SIGN UP</button></a>
             @else 
               <a href="/products"><button class="landingbtn mb-8  ml-32 md:pb-14 md:m-8 mt-12 md:ml-2 border-none text-white"
                style="background: linear-gradient(135deg,blue,cyan);">SHOP</button></a>

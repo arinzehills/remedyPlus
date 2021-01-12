@@ -48,7 +48,7 @@
            <div class="divide-solid">Price: {{$item->model->price}} </div>
         <hr>
        @endforeach
-        <p class="text-right text-blue-600 mt-8">Total: {{Cart::total()}}</p>
+        <p class="text-right text-blue-600 mt-8"> Total: {{Cart::total()}}</p>
         </div>
     </div>
        

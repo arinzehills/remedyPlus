@@ -55,13 +55,13 @@
             </td>
             <td  class="border m-6 w-8 text-sm md:text-base">
                             <select class="quantity text-blue-600 m-6 mb-1" data-id="{{$item->rowId}}">
-                            @for ($i=1; $i<10 +1; $i++)
-                                <option  {{$item->qty == $i ? 'selected': ''}}>{{$i}}</option>
-                            @endfor
-                                {{--<option {{$item->qty == 2 ? 'selected': ''}} >2</option>
+                           {{-- @for ($i=1; $i<10 +1; $i++)@endfor--}}
+                                <option  {{$item->qty == 1 ? 'selected': ''}}>1</option>
+                            
+                                <option {{$item->qty == 2 ? 'selected': ''}} >2</option>
                                 <option {{$item->qty == 3 ? 'selected': ''}} >3</option>
                                 <option {{$item->qty == 4 ? 'selected': ''}} >4</option>
-                                <option {{$item->qty == 5    ? 'selected': ''}} >5  </option>--}}
+                                <option {{$item->qty == 5    ? 'selected': ''}} >5  </option>
                             </select> 
                             
                             <form action="{{route('cart.destroy', $item->rowId)}}" method="POST">
@@ -126,7 +126,7 @@
              {{$item->model->name}}
             </td>
             <td  class="border text-sm md:text-base m-6 w-8">
-                            <select class="quantity text-blue-600 m-6 mb-1" data-id="{{$item->rowId}}">
+                            <select class="quantity text-blue-600 m-6 mb-1">
                                 <option {{$item->qty == 1 ? 'selected': ''}} >1</option>
                                 <option {{$item->qty == 2 ? 'selected': ''}} >2</option>
                                 <option {{$item->qty == 3 ? 'selected':''}} >3</option>
@@ -199,11 +199,34 @@
  <div style="clear:both" class="lg:m-0 mt-16">
   @include('inc/footer')
   <div>
-@endsection
-@section('extra_js')
+
+
 <script async src="{{mix('js/app.js')}}"></script>
 <script src="{{asset('js/app.js')}}"></script>
 <script>
+(function(){
+ const classname= document.querySelectorAll('.quantity')
+    const classnameToArray = Array.prototype.slice.call(classname); 
+   Array.from(classname).forEach(function(element){
+       element.addEventListener('change', function(){
+           const id=element.getAttribute('data-id');
+
+           axios.patch(`cart/${id}`,{
+            quantity: this.value
+           })
+           .then(function(response){
+               //console.log(response);
+                 window.location.href= '{{route('cart.index')}}'
+           })
+           .catch(function(error){
+               console.log(error);
+           });
+           //alert('changed')
+       })
+   })
+})();
+
+/*
 (function(){
    const classname= document.querySelectorAll('.quantity')
     const classnameToArray = Array.prototype.slice.call(classname); 
@@ -225,5 +248,6 @@
        })
    })
 })();
+*/
 </script>
 @endsection
