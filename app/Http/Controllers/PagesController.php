@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Product; 
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class PagesController extends Controller
 {
@@ -20,7 +21,9 @@ class PagesController extends Controller
         return view('pages/checkout');
     }
     public function thankyou(){
-        return view('pages/thankyou');
+        $categories=Category::all();
+        return view('pages/thankyou', [
+            'categories'=>$categories]);;
     }
     public function continue(){
         return view('pages/continue');

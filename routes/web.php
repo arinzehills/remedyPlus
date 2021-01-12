@@ -8,6 +8,8 @@ use App\Http\Controllers\SaveForLaterController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 
+use App\Http\Controllers\PagesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
