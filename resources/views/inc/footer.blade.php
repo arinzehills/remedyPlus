@@ -1,5 +1,5 @@
 <div class="md:bg-gray-700 p-8 bg-gray-100">
-    <div class="sm:flex mb-4">
+    <div class="sm:flex mb-2">
   <div class="sm:w-1/4 h-auto md:text-white">
       <div class="text-red-500 font-black mb-2">Quick Links</div>
       <ul class="list-reset leading-normal">
@@ -7,6 +7,14 @@
           <li class="hover:text-orange text-grey-darker"><a href="#">About</a></li>
           <li class="hover:text-orange text-grey-darker"><a href="/products">Categories</a></li>
            <li class="hover:text-orange text-grey-darker"><a href="#">Back To Top</a></li>
+      </ul>
+      <div class="md:text-red-500 font-black  mb-2 mt-10">Categories</div>
+      <ul class="list-reset leading-normal">         
+          <li class="hover:text-orange text-grey-darker"><a href="/products">All</a></li>   
+           @foreach ($categories as $category)               
+          <li class="hover:text-orange text-grey-darker">
+          <a  href="{{route('products.index', ['category'=>$category->slug])}}">{{$category->name}}</a></li>        
+          @endforeach
       </ul>
   </div>
   <div class="md:text-white sm:w-1/4 h-auto sm:mt-0 mt-8">
@@ -17,7 +25,13 @@
           <li class="hover:text-orange text-grey-darker"><a href="/register">Register</a></li>
           <li class="hover:text-orange text-grey-darker"><a href="#">Back To Top</a></li>
       </ul>
+            <div class="text-red-500 font-black  mb-2 mt-10 ">
+            <i class="fa fa-map-marker" aria-hidden="true"></i> Location</div>
+            <address class="text-grey-darker leading-normal">
+                No 4 nbc road by police post junction ebute ikorodu,<br>
+                Lagos State
 
+            </address>
     <!--<div class="text-red-500 font-black  mb-2 mt-4">Quick Links</div>
       <ul class="list-reset leading-normal">
           <li class="hover:text-orange text-grey-darker"><a href="#">Back To Top</a></li>                  
@@ -26,25 +40,27 @@
       </ul>
         -->
   </div>
-  <div class="md:text-white sm:w-1/4 h-auto sm:mt-0 mt-8">
-        
-
-    <div class="md:text-red-500 font-black  mb-2 mt-4">Categories</div>
-      <ul class="list-reset leading-normal">         
-          <li class="hover:text-orange text-grey-darker"><a href="/products">All</a></li>   
-           @foreach ($categories as $category)               
+  <div   class="md:text-white sm:w-1/4 h-auto sm:mt-0 mt-8 mr-4">
+        <div class="md:text-red-500 font-black  mb-2" id="about">About Us</div>
+    <p class="text-grey-darker leading-normal">
+       We Are a brand poised at providing basic health care services, genuine medicines, wellness products
+       and reffrerals to other health care proffesionals
+    </p>
+        <div class="text-red-500 font-black  mb-2 mt-4">Get in touch</div>
+      <ul class="list-reset leading-normal">
+          <li class="hover:text-orange text-grey-darker"><a href="#">
+          <i class="fa fa-whatsapp" aria-hidden="true"></i> +2348023320671</a></li>                  
           <li class="hover:text-orange text-grey-darker">
-          <a  href="{{route('products.index', ['category'=>$category->slug])}}">{{$category->name}}</a></li>        
-          @endforeach
+            <a href="#"><i class="fa fa-phone   " aria-hidden="true"></i> +2349024553530</a></li>        
+          <li class="hover:text-orange text-grey-darker"><a href="#">
+            <i class="fa fa-envelope-o" aria-hidden="true"></i> remedyplus2008@gmail.com</a></li>
       </ul>
-
-
   </div>
     <div class="md:text-white sm:w-1/2 sm:mt-0 mt-8 h-auto">
         <div class="text-red-500 font-black mb-2">Newsletter</div>
         <p class="text-grey-darker leading-normal">
         Hello! You can subscribe to get latest updates on newsletter about health tips and benefits
-         </p>
+        </p>
         <div class="mt-4 flex">
             <input type="text" class="p-2 border border-grey-light round text-grey-dark text-sm h-auto" placeholder="Your email address">
             <button class="bg-orange md:text-white rounded-sm md:w-auto w-28 h-auto text-xs p-3">Subscribe</button>
@@ -71,6 +87,10 @@
                     </svg>
                 </a>
             </div>
+                   <a href="#"> <button class="md:mt-4 mt-8 h-10 w-36"
+                    style="border-radius:18px; background: linear-gradient(135deg,blue,cyan); border:none">Back to Top</button>
+            
+            
     </div>
 
 </div>

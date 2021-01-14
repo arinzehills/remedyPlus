@@ -8,7 +8,7 @@ use App\Http\Controllers\SaveForLaterController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 
-use App\Http\Controllers\PagesController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ Route::post('/SwitchToCart/{product}', [saveForLaterController::class, 'switchTo
             name('SaveForLater.switchToCart');
 Route::delete('/saveForLater/{id}', [SaveForLaterController::class, 'destroy'])->name('SaveForLater.destroy');
 
-Route::get('/thankyou', [PagesController::class, 'thankyou'])->name('thankyou');
+Route::get('/orders', [OrderController::class, 'index'])->name('order.index')->middleware('auth');
 
 
 Route::get('/dashboard', function () {

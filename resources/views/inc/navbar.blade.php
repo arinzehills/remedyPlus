@@ -235,7 +235,7 @@
             </i></a>
              <div id="mobilemyDropdown" class="mobiledropdown-content">
                   <a href="/">Home</a>
-                  <a href="/">About Us</a>
+                  <a href="#about">About Us</a>
                   <a href="/cart">Cart</a>
                       <div class="mobiledropdown">
                       <a href="javascript:;" onClick="return CategoriesShow()" class="mobiledropbtn">
@@ -251,6 +251,7 @@
                           @guest
                            <a href="/register">Register</a>
                            @else
+                           <a href="/order">My Orders</a>
                           <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <x-responsive-nav-link :href="route('logout')"
@@ -259,6 +260,7 @@
                          LOGOUT
                     </x-responsive-nav-link>
                 </form>
+                
                 @endguest
                       </div>
 
@@ -276,9 +278,9 @@
     <div>
       <ul class="ul">
           <li class="hid"><a href="/">Home</a></li>
-           <li class="hid"><div class="dropdown">
-    <button class="dropbtn">Categories
-      <i class="fa fa-caret-down float-left"></i>
+           <li class="hid" ><div class="dropdown">
+    <button class="dropbtn ml-4" >Categories 
+      <i class="fa fa-caret-down float-left" ></i>
     </button>
     <div class="dropdown-content">
         <a class="dropdown-a" href="/products">All</a>
@@ -288,7 +290,7 @@
       </div>
   </div> </li>
 
-          <li><a class="m-6 " href="/cart"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <li><a class="m-6 " href="/cart"><svg class="ml-8 mr-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                <path stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="2" d="M3 3h2l.4 2M7 
                                 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 
@@ -297,19 +299,20 @@
                                   
                               {{Cart::count()}}
                               @endif</a>
-                               <li><a style="padding-left:1em" href=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <!-- <li><a style="padding-left:1em" href=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            </svg></a></li>
+                            </svg></a></li>-->
          
        @guest
         <li><a id="mobile-icons" href="/checkout"><i class="fa fa-user-circle"></i></a></li>
           <li><a id="system" href="/login"><button > Sign in</button></a></li>
         @else
         <li class="hid" >
-          <div class="dropdown ">
-              <button class="dropbtn overflow-hidden">{{ Auth::user()->name }}
-                </button>
-                 <i class="fa fa-caret-down float-left"></i>
+          <div class="dropdown ml-8">
+              <button class="dropbtn overflow-hidden">
+               <i class="fa fa-caret-down float-left"></i>{{ Auth::user()->name }}
+              </button>
+                
               <div class="dropdown-content">
                    <form method="POST" action="{{ route('logout') }}">
                     @csrf
@@ -319,10 +322,11 @@
                          LOGOUT
                     </x-responsive-nav-link>
                 </form>
-                 
+                  <a  href="/orders">MY ORDERS</a>
              </div>
          </div>
         </li>
+       
       @endguest
        </ul>
      

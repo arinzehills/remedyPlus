@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Cart;
+use App\Models\Order;
+use App\Models\Product;
+use App\Models\OrderProduct;
 class CheckoutController extends Controller
 {
     /**
@@ -87,9 +90,27 @@ class CheckoutController extends Controller
 
   if($res->status == 'true'){
     $link=$res->data->authorization_url;
-    
-    return redirect($link);
+    //$request->user_id = auth()->user()->id; //assigning user_id value to the current logged in user's id (this has to be before adding the request to the inputs variable so when  you execute ::Create($inputs) it will be there)
+    foreach (Cart::content() as $item){
+      $request->product_id = $item->model->id;
+          }
+          $request->user_id = auth()->user()->id;
+   // dd( $request->product_id = $item->model->id);
+    $inputs = $request->all();
+   // dd($inputs,$request->product_id, $request->user_id);
+    //
+    $amount=Cart::count();
+  $orders = Order::Create($inputs,$request->product_id, $request->user_id,$amount);
 
+          foreach(Cart::content() as $item){
+              OrderProduct::create([
+                'order_id'=>$orders->id,
+                'product_id'=>$item->model->id,
+                'quantity'=>$item->qty,
+              ]);
+          }
+          
+    return redirect($link);
 
   }
   else{

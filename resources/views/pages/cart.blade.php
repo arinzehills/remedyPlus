@@ -3,7 +3,7 @@
 
 @section('contents')
         @include('inc/navbar')
-        <div class="mt-16 ml-8">
+        <div class="mt-16">
                 <div class="">
                 @if(session()->has('success_message'))
                     <div class="text-green-600 font-bold ml-8 p-3">
@@ -96,7 +96,15 @@
 <button style="color:blue" class="border-2 border-red-600 text-white w-52 m-16"><a href="/checkout">
  PROCEED TO CHECKOUT</a></button>
  @else
-    <p class="md:ml-16">No items in cart</p>
+        <div style="background:blue" class="h-96">
+                
+                <p class="text-center text-white font-bold pt-12"> No items in cart </p>
+
+               <h1 class="text-center mt-16 text-white h-64"> <i class="fa fa-cart-arrow-down fa-5x" ></i></h1>
+                   <!--<div><a style="border: white; border-radius:0px; width:10em;"> 
+                        SHOP NOW </a><div>-->
+         </div>
+   
 @endif
 <!--savefor later items-->
 
@@ -156,12 +164,19 @@
          </tbody>
 </table>
  @else
- <p class="text-2xl md:ml-16 uppercase"> items saved for later</p>
-   <p class="md:ml-16"> No items Saved for later </p>
+      <p class="text-2xl ml-4 md:ml-16 uppercase mt-4 mb-4"> items saved for later</p>
+            <div style="background:blue" class="h-96">
+                
+                <p class="text-center text-white font-bold pt-12"> NO ITEMS SAVED FOR LATER </p>
+
+               <h1 class="text-center mt-16 text-white h-64"> <i class="fa fa-heart fa-5x" ></i></h1>
+                   <!--<div><a style="border: white; border-radius:0px; width:10em;"> 
+                        SHOP NOW </a><div>-->
+                     </div>
 @endif
 </div>
 
- <p class="text-2xl md:ml-16"> More Products Related To This</p>
+ <p class="text-2xl md:ml-16 mt-4"> YOU MIGHT ALSO LIKE</p>
  @foreach ($mightAlsoLike  as $product)
             <div class=" rounded-lg border m-8 w-60 h-84 float-left text-white" 
             data-aos-duration="2000" data-aos="fade-up" style="background:blue">

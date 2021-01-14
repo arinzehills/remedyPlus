@@ -11,16 +11,21 @@ class Order extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'product_id', 'user_id', 'quantity', 'address' 
+        'product_id', 'user_id','phone', 'quantity', 'address','city','state', 
     ];
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+       // return $this->belongsTo(User::class, 'user_id');
+       return $this->belongsTo(User::class, 'user_id');
     }
 
     public function product()
     {
         return $this->belongsTo(Product::class, 'product_id');
+    }
+    public function products()
+    {
+        return $this->belongsToMany(Product::class);
     }
 }

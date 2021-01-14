@@ -3,7 +3,7 @@
 
 @section('contents')
 @include('inc/navbar')
-        <div class="mt-20 md:ml-32  md:grid md:grid-cols-3 gap-4">
+        <div class="mt-20 md:ml-32  md:grid md:grid-cols-3 gap-4">  
   <div class="...">  <h1 class="font-bold md:ml-32 ml-4 uppercase text-xl" >Checkout<h1></div>
 
   <div class="md:ml-40">
@@ -15,22 +15,28 @@
            <h1 class="text-xl font-semibold">Hello there 👋, <span class="font-normal">Fill your Billing Details</span></h1>
     <form class="lg:mt-6 lg:w-84" id="paymentForm" name="form" method="POST" action="{{route('checkout.store')}}">
     {{csrf_field()}}
+
          <input type="hidden" name="amount" id="amount" value="{{Cart::total()}}">
-      <label for="name" class="block text-xs font-semibold text-gray-600 uppercase">Name</label>
-          <input id="firstname"  value="{{auth()->user()->name}}"
+         <input type="hidden" name="user_id" id="user_id" value="{{auth()->user()->id}}">
+           @foreach (Cart::content() as $item)
+          <input type="hidden" name="quantity" id="amount" value="{{$item->qty}}">
+           <input type="hidden" name="product_id" id="product_id" value="{{$item->model->id}}">
+          @endforeach
+      <label for="name"  class="block text-xs font-semibold text-gray-600 uppercase">Name</label>
+          <input id="firstname" name="name" value="{{auth()->user()->name}}"
           type="text" name="name" placeholder="Full Name"  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"  />
       <label for="Phone" class="block text-xs font-semibold text-gray-600 uppercase">Phone</label>
-          <input id="phone" type="text" placeholder="Phone"  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 "  />
+          <input name="phone" type="text" placeholder="Phone"  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 "  />
        <label for="email" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">E-mail</label>
        <input id="email" type="email" name="email" autocomplete="email" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200" value="{{auth()->user()->email}}" readonly/>
        
        <label for="address" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Address</label>
-      <input  type="text" name="name" placeholder="address"  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 " />
+      <input  type="text" name="address" placeholder="address"  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 " />
       
       <label for="State" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">State</label>
-      <input  placeholder="State"  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200" />
+      <input  placeholder="State" name="state" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200" />
        <label class="block mt-2 text-xs font-semibold text-gray-600 uppercase">City</label>
-       <input  type="text" placeholder="City"  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 "  />
+       <input  type="text" name="city" placeholder="City"  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 "  />
         
       <button type="submit" Name="pay" class="w-full mt-6 font-medium text-blue-700 uppercase shadow-lg" >
         Save and continue
