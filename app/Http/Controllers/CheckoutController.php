@@ -51,11 +51,7 @@ class CheckoutController extends Controller
 
     'amount' => Cart::total() * 100,
 
-    'address' => $request->address,
-
-    'phone number' => $request->phone,
-
-    'state' => $request->state,
+    
 
   ];
 
@@ -82,7 +78,7 @@ class CheckoutController extends Controller
 
     //my test key   sk_test_8cb0e758304ba077174e8dfe52ef9706d87efe82
 
-    "Authorization: Bearer sk_live_c797fd2306bd3311a90a8b584665449c8620654e",
+    "Authorization: Bearer sk_test_8cb0e758304ba077174e8dfe52ef9706d87efe82",
 
     "Cache-Control: no-cache",
 

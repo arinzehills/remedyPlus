@@ -26,7 +26,7 @@
           <input id="firstname" name="name" value="{{auth()->user()->name}}"
           type="text" name="name" placeholder="Full Name"  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"  />
       <label for="Phone" class="block text-xs font-semibold text-gray-600 uppercase">Phone</label>
-          <input name="phone" type="text" placeholder="Phone"  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 "  />
+          <input name="phone" type="text" placeholder="Phone"  class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 " required />
        <label for="email" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">E-mail</label>
        <input id="email" type="email" name="email" autocomplete="email" class="block w-full p-3 mt-2 text-gray-700 bg-gray-200" value="{{auth()->user()->email}}" readonly/>
        
