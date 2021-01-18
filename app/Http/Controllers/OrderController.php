@@ -16,7 +16,7 @@ class OrderController extends Controller
         /*$orders=DB::table('orders')
         ->where('user_id', auth()->user()->id)
         ->get();*/
-        $orders=Order::with('products')
+        $orders=Order::with('products')->take(4)
         ->where('user_id', auth()->user()->id)
         ->get();
         return view('pages.orders', [

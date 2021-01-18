@@ -11,10 +11,11 @@
                 @endif
        
          @if (count($orders)>0) 
-          <h1 class="m-12 md:ml-16  text-green-600 text-center uppercase "> thank you<h1>
+          <h1 class="m-12 mb-4 md:ml-16  text-green-600 text-center uppercase "> thank you for ordering from remedy plus<h1>
+                        <small class="text-center text-blue-600 m-12 md:ml-60">Your Last Four orders</small>
         @foreach ($orders as $order)
            {{--}} {{$order->quantity}}--}}
-           <div style="border:1px solid blue; width:35em" class="ml-64 mt-4 shadow-xl">
+           <div style="border:1px solid blue; width:35em" class="ml-64 mt-4 shadow-lg">
                <div  class="flex border-blue-700 p-4"> 
                         <div class=" p-4 h-auto"  style=""> 
                                 <a href="{{route('products.show',$order->product->id)}}">

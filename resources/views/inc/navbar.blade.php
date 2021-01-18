@@ -5,18 +5,19 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
-  
-    header{
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      display:flex;
-      justify-content:space-between;
-      align-items: center;
-      transition:0.6s;
-      z-index:100000;
+      header{
+          position:fixed;
+          top:0;
+          left:0;
+          width:100%;
+          display:flex;
+          justify-content:space-between;
+          align-items: center;
+          transition:0.6s;
+          z-index:100000;
+       
     }
     header.sticky{
       padding:10px 5px;
@@ -94,46 +95,46 @@
        }
        .dropdown {
   float: left;
-}
+          }
 
 .dropdown .dropbtn {
-  font-size: 16px;  
-  border: none;
-  outline: none;
-  color: blue;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 2;
+        font-size: 16px;  
+        border: none;
+        outline: none;
+        color: blue;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 2;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  background:white
-}
+          display: none;
+          position: absolute;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+          background:white
+        }
 
-.dropdown-content a {
-  float: none;
-  color: blue;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
+      .dropdown-content a {
+        float: none;
+        color: blue;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
 
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
+    .dropdown-content a:hover {
+      background-color: #ddd;
+            }
 
 .dropdown:hover .dropdown-content {
   display: block;
-}
+          }
 #mobile-icons{
   display:none;
-}
+          }
 @media only screen and (min-device-width: 595px)
        {
               #mobile-menu{
@@ -145,77 +146,75 @@
          header  .logo{
              top:4px;
              left:70px
-           }
-           .logo{
-             font-size:13px;
-           }
-           .dropbtn{
-             opacity:0;
-           }
+                }
+                .logo{
+                  font-size:13px;
+                }
+                .dropbtn{
+                  opacity:0;
+                }
            header ul li a{
              margin:1px 0px;
               
               }
-     header ul li a svg{
-        height:20px;
-        right:-10px;
-        margin:0 20px
-       }
-       header ul{
-         }
-       
-       #system{
-       display:none;
-       }
-       .hid{
-         display:none;
-       }
-       #mobile-icons{
-  display:inline;
+            header ul li a svg{
+                height:20px;
+                right:-10px;
+                margin:0 20px
+                    }
+              header ul{
+                }
+              
+              #system{
+              display:none;
               }
-      #mobile-menu{
-        display:inline-block
-      }
-       .mobiledropbtn {
-  color: red;
-  border: none;
-  cursor: pointer;
-}
+              .hid{
+                display:none;
+              }
+              #mobile-icons{
+          display:inline;
+                      }
+              #mobile-menu{
+                display:inline-block
+              }
+              .mobiledropbtn {
+                  color: red;
+                  border: none;
+                  cursor: pointer;
+                }
 
+        .dropdown {
+              position: relative;
+              display: inline-block;
+            }
+        .mobiledropdown-content {
+              display:none;
+              min-width: 160px;
+              overflow: auto;
+              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+              z-index: 1;
+              }
 
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-.mobiledropdown-content {
-  display:none;
-  min-width: 160px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-    .mobiledropdown-content a {
-      background:white;
-      color: blue;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-    header.sticky .mobiledropdown-content a {
-      background:blue;
-      color: white;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-.show {
-  display: block;
-}
-        .showCategories{
-          display: block;
-        }
+        .mobiledropdown-content a {
+                background:white;
+                color: blue;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                }
+        header.sticky .mobiledropdown-content a {
+                    background:blue;
+                    color: white;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: block;
+                               }
+          .show {
+            display: block;
+                 }
+                  .showCategories{
+                    display: block;
+                  }
    }
   
     </style>
@@ -224,14 +223,14 @@
     <header >
     <div >
      <img 
-     style="height:90px;left:0.6em; top:-1.9em; position:absolute" src="{{asset('img/logo.png')}}">
+     style="height:90px;left:0.6em; top:-1.9em; position:absolute ;" src="{{asset('img/logo5.png')}}">
          <!-- for mobile menu-->
         <div id="mobile-menu">
           <ul class="ul">
             <li class="" style="position:absolute; left:-20.5em;  ">
             <div class="mobiledropdown">
             <a href="javascript:;" onClick="return myFunction()" class="mobiledropbtn">
-            <i class="fa fa-bars"  style="height:3em; padding-right:2em;" aria-hidden="true">
+            <i class="fa fa-bars fa-lg"  style="height:3em; padding-right:2em;" aria-hidden="true">
             </i></a>
              <div id="mobilemyDropdown" class="mobiledropdown-content">
                   <a href="/">Home</a>
@@ -290,7 +289,7 @@
       </div>
   </div> </li>
 
-          <li><a class="m-6 " href="/cart"><svg class="ml-8 mr-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <li><a class="m-6 " href="/cart"><svg class="ml-8 mr-8  h-6  w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                <path stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="2" d="M3 3h2l.4 2M7 
                                 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 
@@ -304,7 +303,7 @@
                             </svg></a></li>-->
          
        @guest
-        <li><a id="mobile-icons" href="/checkout"><i class="fa fa-user-circle"></i></a></li>
+        <li><a id="mobile-icons" href="/checkout"><i class="fa fa-user-circle fa-lg"></i></a></li>
           <li><a id="system" href="/login"><button > Sign in</button></a></li>
         @else
         <li class="hid" >

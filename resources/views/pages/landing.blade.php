@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{csrf_token()}}">
-        <title>{{config('app.name','Remedy Plus')}}</title>
+        <title>{{config('app.name','Remedy Drug Plus Pharmacy')}}</title>
      <style>
     section:before{
         content:'';
@@ -49,15 +49,52 @@
   opacity: 0.7;
 }
  .landingbtn{
-font-size:33px;width:190px; border-radius:30px;
+      font-size:33px;width:190px; border-radius:30px;
       height:50px;
       border-width:4px; color:blue;
       justify-content:center;
-}
+          }
 
- #lol{
+        .lol{
              right:35%;position:absolute; top:6em;height:30em
             }
+            #slider1{
+                top:0em;height:28em
+                ;right:20%;
+            }
+            #slider2{
+              top:0em;height:30em;right:25%;
+            }
+             #slider3{
+              top:0em;height:30em;right:25%;
+            }
+        #slideshow { 
+          margin: 50px auto; 
+          position: relative; 
+          height:30em;
+          padding: 10px; 
+   
+          }
+
+          #slideshow > div { 
+              position: absolute; 
+              top: 0px; 
+              left: 10px; 
+              right: 10px; 
+              bottom: 10px; 
+          }
+          #slideshow-text { 
+          margin: 0px auto; 
+          position: relative; 
+          height:17em;
+             }
+
+          #slideshow-text > div { 
+              position: absolute; 
+              top: 0px; 
+              left: 10px; 
+              right: 10px; 
+                }
 /*for mid screens */
 
 @media only screen and (min-device-width: 554px)
@@ -77,10 +114,22 @@ font-size:33px;width:190px; border-radius:30px;
             }
          section{
                top:30px; right:1em; position:absolute; margin:10px; dislay:flex; border-radius:30px;
-     background: blue ;width:50%;
-      height:70vh;  -ms-transform: skewY(0deg); /* IE 9 */
-  transform: skewx(-20deg);
+               background: blue ;width:50%;
+                height:70vh;  -ms-transform: skewY(0deg); /* IE 9 */
+                transform: skewx(-20deg);
             }
+            #slideshow-text { 
+          margin: 0px auto; 
+          position: relative; 
+          height:10em;
+             }
+
+          #slideshow-text > div { 
+              position: absolute; 
+              top: 0px; 
+              left: 10px; 
+              right: 10px; 
+                }
             #products-div{
               top:24em;
                position:absolute;
@@ -115,45 +164,59 @@ font-size:33px;width:190px; border-radius:30px;
 @media only screen and (max-device-width: 593px)
        {
              section{
-               top:30px;  position:absolute;  display:flex; border-radius:5px;
-     background: linear-gradient(135deg,blue,cyan);width:100%;
-      height:60vh; 
-            }
+                   top:40px;  position:absolute;  display:flex;
+                   background: linear-gradient(135deg,blue,blue);
+                   width:100%;
+                  height:70vh; 
+                    }
                 section:before{
-        content:'';
-        position:absolute;
-        bottom: 0;
-        left:0;
-        width:100%;
-        height:200px;
-        background:#fff;
-        clip-path:polygon(100% 0, 0 100%,100% 100%);
+                      content:'';
+                      position:absolute;
+                      bottom: 0;
+                      left:0;
+                      width:100%;
+                      height:200px;
+                      background:#fff;
+                      clip-path:polygon(100% 0, 0 100%,100% 100%);
         
-    }
-    h1{
-      color:white
-    }
-   .product{
-      top:31em; position:absolute; color:blue; left: 22%;
-     
-    }
-    #down{
-     position:absolute;
-      width:100%;
-      top:370%;
-    
-    }
-    #lol{
-right:35%; top:5em;height:30em
-    }
-    #moreproducts{
-      position:absolute;top:380%;
-      margin-bottom:3em;  
-    }
-     #products-div{
-    top:35em; position:absolute;
-    }
-}
+                     }
+                     #slider2{
+                        position:absolute;
+                    width:20em
+                       }
+             #slider3{
+                   display:none;
+            }
+            #slideshow-text { 
+          margin: 0px auto; 
+          position: relative; 
+          height:8em;
+   
+          }
+              h1{
+                color:white
+              }
+              .product{
+                  top:31em; position:absolute; color:blue; left: 22%;
+                
+                }
+                  #down{
+                  position:absolute;
+                    width:100%;
+                    top:370%;
+                  
+                  }
+                  .lol{
+              right:35%; top:11em;height:24em
+                  }
+                  #moreproducts{
+                    position:absolute;top:380%;
+                    margin-bottom:3em;  
+                  }
+                  #products-div{
+                  top:35em; position:absolute;
+                  }
+              }
 
     </style>
     
@@ -162,30 +225,63 @@ right:35%; top:5em;height:30em
      @include('inc/navbar')
 
      <section style="">
-          </section>
-           <img src="{{asset('/img/rubber.png')}}" id="lol" class="lol ml-32 md:ml-0" 
-           style="">
-         <div id="sect" style="top:30px;margin:30px; left:3px;font-weight:100px; position:absolute;">
-            <h1 class="md:text-6xl text-3xl font-bold " id="head-text" style=" line-height: 150%;"> 
-            YOUR HEALTH, YOUR <br>
-            WEALTH
-            </h1>
-            <p style="margin:10px; color:blue" class="text-base md:text:3xl">
-            Get the most out of your health by ordering<br>
-            pharmaceutical products and snacks and <br>
-            enjoy your health
-            <p>
+      </section>
+          <!--image slide show-->
+           <div id="slideshow">
+                  <div>
+                    <img src="{{asset('/img/doctor12.png')}}" id="slider1" class="lol ml-32 md:ml-0" >
+                  </div>
+                  <div>
+                    <img src="{{asset('/img/doctor22.png')}}" id="slider2" class="lol ml-32 md:ml-0" >
+                  </div>
+                  <div>
+                     <img src="{{asset('/img/rubber.png')}}" id="lol" class="lol ml-32 md:ml-0" 
+                       style="">
+                  </div>
+                  <div>
+                    <img src="{{asset('/img/doctor33.png')}}" id="slider3" class="lol ml-32 md:ml-0" >
+                  </div>
+               
+            </div>
+       <!--text slide show-->
+          
+              <div id="sect" style="top:20px;margin:30px; left:3px;font-weight:100px; position:absolute;">
+                    <div id="slideshow-text">
+                          <div>
+                            <h1 class="md:text-6xl text-3xl font-bold " id="head-text" style=" line-height: 150%;"> 
+                                REMEDY DRUG PLUS<br>
+                                PHARMACY
+                            </h1>
+                          </div>
+                          <div>
+                            <h1 class="md:text-6xl text-3xl font-bold " style=" line-height: 150%;"> 
+                                YOUR HEALTH, YOUR 
+                                WEALTH
+                            </h1>
+                          </div>
+                          <div>
+                            <h1 class="md:text-6xl text-3xl font-bold "  style=" line-height: 150%;"> 
+                               SHOP HEALTH PRODUCTS <br>
+                                WITH EASE
+                            </h1>
+                          </div>
+                      </div>
+                            <p style="margin:10px;" class="text-base text-white md:text-blue-600 md:text:3xl">
+                            Get the most out of your health by ordering<br>
+                            pharmaceutical products,shoes, bags and snacks and <br>
+                            enjoy your health
+                            <p>
+                    
             @guest
-              <a href="/products"><button class="landingbtn mb-8 ml-32 md:pb-14 md:m-8 md:ml-2" style="">ORDER</button></a>
-       <a href="/register"><button  class="landingbtn md:pb-14 ml-32 md:ml-12">SIGN UP</button></a>
+                <a href="/products"><button class="landingbtn mb-8 ml-32 md:pb-14 md:m-8 md:ml-2 bg-white" style="">ORDER</button></a>
+                <a href="/register"><button  class="landingbtn md:pb-14 ml-32 md:ml-12 bg-white">SIGN UP</button></a>
             @else 
-              <a href="/products"><button class="landingbtn mb-8  ml-32 md:pb-14 md:m-8 mt-12 md:ml-2 border-none text-white"
-               style="background: linear-gradient(135deg,blue,cyan);">SHOP</button></a>
+                  <a href="/products"><button class="landingbtn mb-8  ml-32 md:pb-14 md:m-8 mt-12 md:ml-2 border-none text-white"
+                  style="background: linear-gradient(135deg,blue,cyan);">SHOP</button></a>
               
             @endguest
-        </div>
-
-      
+            </div>
+          
       
           
        <!-- @foreach ($products as $product)
@@ -240,14 +336,40 @@ right:35%; top:5em;height:30em
          </div>
            
     <div style="clear:both;" id="down" >
-@include('inc/footer')
+    @include('inc/footer')
   </div>
   
    </body>
     </html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+            $("#slideshow > div:gt(0)").hide();
+
+        setInterval(function() { 
+          $('#slideshow > div:first')
+            .fadeOut(1000)
+            .next()
+            .fadeIn(1000)
+            .end()
+            .appendTo('#slideshow');
+        },  3000);
+
+        $("#slideshow-text > div:gt(0)").hide();
+
+        setInterval(function() { 
+          $('#slideshow-text > div:first')
+            .fadeOut(1000)
+            .next()
+            .fadeIn(1000)
+            .end()
+            .appendTo('#slideshow-text');
+        },  3000);
+    </script>
      @section('contents')
     @section('extra_js')
     <script>
   AOS.init();
+
+
     </script>
     @endsection

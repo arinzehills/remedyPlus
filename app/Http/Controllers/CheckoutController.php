@@ -51,6 +51,12 @@ class CheckoutController extends Controller
 
     'amount' => Cart::total() * 100,
 
+    'address' => $request->address,
+
+    'phone number' => $request->phone,
+
+    'state' => $request->state,
+
   ];
 
   $fields_string = http_build_query($fields);
@@ -70,8 +76,13 @@ class CheckoutController extends Controller
   curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
 
   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    //remedyplus keys
+    //pk_live_e822b5f82c096f9f7df2f1bad888d8067a994788
+    //sk_live_c797fd2306bd3311a90a8b584665449c8620654e
 
-    "Authorization: Bearer sk_test_8cb0e758304ba077174e8dfe52ef9706d87efe82",
+    //my test key   sk_test_8cb0e758304ba077174e8dfe52ef9706d87efe82
+
+    "Authorization: Bearer sk_live_c797fd2306bd3311a90a8b584665449c8620654e",
 
     "Cache-Control: no-cache",
 
