@@ -87,6 +87,7 @@
           margin: 0px auto; 
           position: relative; 
           height:17em;
+          
              }
 
           #slideshow-text > div { 
@@ -254,13 +255,13 @@
                             </h1>
                           </div>
                           <div>
-                            <h1 class="md:text-6xl text-3xl font-bold " style=" line-height: 150%;"> 
+                            <h1 class="md:text-6xl text-3xl font-bold " style=" line-height: 120%;"> 
                                 YOUR HEALTH, YOUR 
                                 WEALTH
                             </h1>
                           </div>
                           <div>
-                            <h1 class="md:text-6xl text-3xl font-bold "  style=" line-height: 150%;"> 
+                            <h1 class="md:text-6xl text-3xl font-bold "  style=" line-height: 120%;"> 
                                SHOP HEALTH PRODUCTS <br>
                                 WITH EASE
                             </h1>
