@@ -3,7 +3,21 @@
 
 @section('contents')
 @include('inc/navbar')
+<style>
+        @media only screen and (min-device-width: 595px)
+       {
+              #orders{
+                width:35em
+              }
+       }
 
+        @media only screen and (max-device-width: 595px)
+       {
+              #orders{
+                width:95%
+              }
+       }
+</style>
                 @if(session()->has('success_message'))
                     <div class="text-green-600 font-bold ml-8 p-3">
                     {{session()->get('success_message')}}                
@@ -15,7 +29,7 @@
                         <small class="text-center text-blue-600 m-12 md:ml-60">Your Last Four orders</small>
         @foreach ($orders as $order)
            {{--}} {{$order->quantity}}--}}
-           <div style="border:1px solid blue; width:35em" class="ml-64 mt-4 shadow-lg">
+           <div style="border:1px solid blue;" id="orders" class="md:ml-64 ml-4 mt-4 shadow-lg">
                <div  class="flex border-blue-700 p-4"> 
                         <div class=" p-4 h-auto"  style=""> 
                                 <a href="{{route('products.show',$order->product->id)}}">
@@ -36,7 +50,7 @@
                                 Quantity : {{$order->quantity}}
                         </div>
                         <div class="text-right">
-                        <h4  class="text-right ml-64 mt-2"><i class="fa fa-money" aria-hidden="true"></i>
+                        <h4  class="text-right md:ml-64 ml-28 mt-2"><i class="fa fa-money" aria-hidden="true"></i>
                                         Amount :  {{$order->amount}} </h4>
                         </div>
                 </div>

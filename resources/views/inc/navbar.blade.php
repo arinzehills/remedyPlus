@@ -303,7 +303,7 @@
                             </svg></a></li>-->
          
        @guest
-        <li><a id="mobile-icons" href="/checkout"><i class="fa fa-user-circle fa-lg"></i></a></li>
+        <li><a id="mobile-icons" href="/login"><i class="fa fa-user-circle fa-lg"></i></a></li>
           <li><a id="system" href="/login"><button > Sign in</button></a></li>
         @else
         <li class="hid" >
