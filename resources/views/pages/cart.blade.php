@@ -50,7 +50,7 @@
           
            
             <a href="{{route('products.show',$item->model->id)}}">
-             <img style="height:100px;weight:100px" src="{{$item->model->image}}"></a>
+             <img style="height:100px;weight:100px" src="{{asset('storage/'.$item->model->image)}}"></a>
              {{$item->model->name}}
             </td>
             <td  class="border m-6 w-8 text-sm md:text-base">
@@ -130,7 +130,7 @@
           
            
             <a href="{{route('products.show',$item->model->id)}}">
-             <img style="height:100px;weight:100px" src="{{$item->model->image}}"></a>
+             <img style="height:100px;weight:100px" src="{{asset('storage/'.$item->model->image)}}"></a>
              {{$item->model->name}}
             </td>
             <td  class="border text-sm md:text-base m-6 w-8">
@@ -181,7 +181,7 @@
             <div class=" rounded-lg border m-8 w-60 h-84 float-left text-white" 
             data-aos-duration="2000" data-aos="fade-up" style="background:blue">
                 
-                    <img src="{{$product->image}}" alt="Denim Jeans" class="md:h-40 md:w-32 md:ml-16">
+                    <img src="{{asset('storage/'.$product->image)}}" alt="Denim Jeans" class="md:h-40 md:w-32 md:ml-16">
                   <h3 class="p-1"> <a href="/products/{{$product->id}}">{{$product->name}}</a></h3>
                   <div >
                       <p style="" class="p-2">Price : {{$product->price}} </p>

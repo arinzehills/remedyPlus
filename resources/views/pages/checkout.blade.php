@@ -49,7 +49,7 @@
         divide-yellow-600 divide-solid">
        YOUR ORDER({{Cart::count()}})
        @foreach (Cart::content() as $item)       
-       <div class="divide-solid"><a><img style="height:100px;weight:100px" src="{{$item->model->image}}"></a>
+       <div class="divide-solid"><a><img style="height:100px;weight:100px" src="{{asset('storage/'.$item->model->image)}}"></a>
              {{$item->model->name}}  </div>
            <div class="divide-solid">Price: {{$item->model->price}} </div>
         <hr>

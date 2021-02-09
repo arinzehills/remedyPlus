@@ -18,8 +18,7 @@ class CategoryTableSeeder extends Seeder
         Category::insert([
                 ['name'=>'Pharmaceutical','slug'=>'pharmaceutical', 'created_at'=>$now,'updated_at'=>$now],
                 ['name'=>'Snacks','slug'=>'snacks', 'created_at'=>$now,'updated_at'=>$now],
-                ['name'=>'Shoes','slug'=>'Shoes', 'created_at'=>$now,'updated_at'=>$now],
-                ['name'=>'Bags','slug'=>'Bags', 'created_at'=>$now,'updated_at'=>$now],
+               
         ]);
     }
     

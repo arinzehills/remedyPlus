@@ -24,7 +24,7 @@
         <body >
 
         <div class="md:m-32 mt-16 ml-12 md:w-auto w-60 mb-6 md:mr-60 md:flex" style="background:blue" >
-            <img class="bg-red-500 md:h-80 h-52" src="{{$products->image}}">
+            <img class="bg-red-500 md:h-80 h-52" src="{{asset('storage/'.$products->image)}}">
 
                 <div class="float-none">
                 <p class="text-white h-8 p-2 font-bold"> Product Name : {{$products->name}}</p><br>
@@ -53,7 +53,7 @@
             <div class=" rounded-lg border m-8 w-60 h-84 float-left text-white" style="background:blue"
              data-aos-duration="2000" data-aos="fade-up">
                 
-                    <img src="{{$product->image}}" alt="Denim Jeans" class="md:h-40 md:w-32 md:ml-16">
+                    <img src="{{asset('storage/'.$product->image)}}" alt="Denim Jeans" class="md:h-40 md:w-32 md:ml-16">
                   <h3 class="p-1"> <a href="/products/{{$product->id}}">{{$product->name}}</a></h3>
                   <div >
                       <p style="" class="p-2">Price : {{$product->price}} </p>

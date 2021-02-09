@@ -13,7 +13,7 @@
             <div data-aos-duration="2000" data-aos="fade-up" 
             class="text-white rounded-lg border md:w-52 w-36 h-auto md:h-64  mb-2 ml-4 float-left" style="background:blue; ">
                 
-                    <img src="{{$product->image}}" alt="Denim Jeans" class="md:h-28 md:w-28 md:ml-16" >
+                    <img src="{{asset('storage/'.$product->image)}}" alt="Denim Jeans" class="md:h-28 md:w-28 md:ml-16" >
                   <h3 class="p-1 text-sm"> <a href="/products/{{$product->id}}">{{$product->name}}</a></h3>
                   <div >
                       <p style="" class="text-xs md:text-base pl-1">price : {{'N'.$product->price}} </p>

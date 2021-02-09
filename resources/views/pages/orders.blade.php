@@ -20,6 +20,7 @@
 </style>
                 @if(session()->has('success_message'))
                     <div class="text-green-600 font-bold ml-8 p-3">
+
                     {{session()->get('success_message')}}                
                     </div>
                 @endif
@@ -33,7 +34,7 @@
                <div  class="flex border-blue-700 p-4"> 
                         <div class=" p-4 h-auto"  style=""> 
                                 <a href="{{route('products.show',$order->product->id)}}">
-                              <img style="height:100px;weight:100px" src="{{$order->product->image}}"></a>  
+                              <img style="height:100px;weight:100px" src="{{asset('storage/'.$order->product->image)}}"></a>  
                         </div>
                         <div class="ml-8 p-2">
                                <p class="overflow-hidden ..."> PRODUCT NAME: {{$order->product->name}}</p>
