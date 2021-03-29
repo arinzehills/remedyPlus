@@ -61,7 +61,7 @@
                   <div class="">
                   </div>
                   
-                  <div >
+                  <div>
                       <p style="" class="p-2">Units left: {{$product->units}} </p>
                   </div>
 
