@@ -183,7 +183,7 @@
                      }
                      #slider2{
                         position:absolute;
-                    width:20em
+                        width:20em
                        }
              #slider3{
                    display:none;
@@ -223,6 +223,7 @@
     
     </head>
     <body>
+     @include('layouts/loader')
      @include('inc/navbar')
 
      <section style="">
@@ -342,6 +343,8 @@
   
    </body>
     </html>
+    
+    <script src="{{asset('/js/jquery-1.12.4.min')}}"><script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
             $("#slideshow > div:gt(0)").hide();
@@ -365,6 +368,9 @@
             .end()
             .appendTo('#slideshow-text');
         },  3000);
+        setTimeout(function(){
+            $('loader_bg').fadeToggle();
+                },1500);
     </script>
      @section('contents')
     @section('extra_js')
@@ -373,4 +379,5 @@
 
 
     </script>
+    
     @endsection
