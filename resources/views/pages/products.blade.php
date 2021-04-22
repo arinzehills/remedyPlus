@@ -2,8 +2,16 @@
 
 
 @section('contents')
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 @include('inc/navbar')
 
+@include('layouts/loader')
+<script>
+setTimeout(function(){
+            $('.loader_bg').fadeToggle();
+                },1500); 
+</script>
 
      
 <h2 class="text-center m-16 mb-1 uppercase font-bold " style="font-size:30px;color:blue ">

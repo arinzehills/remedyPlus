@@ -18,6 +18,7 @@
               }
        }
 </style>
+@include('layouts/loader')
                 @if(session()->has('success_message'))
                     <div class="text-green-600 font-bold ml-8 p-3">
 
@@ -72,5 +73,10 @@
   @include('inc/footer')
   <div>
   
-
+<script>
+setTimeout(function(){
+            $('.loader_bg').fadeToggle();
+                },1500); 
+</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 @endsection

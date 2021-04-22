@@ -1,5 +1,7 @@
    @extends('layout.app')
    @section('contents')
+   
+      @include('layouts/loader')
    <!DOCTYPE html>
     <html>
     <head>
@@ -8,6 +10,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{csrf_token()}}">
         <title>{{config('app.name','Remedy Drug Plus Pharmacy')}}</title>
+        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
      <style>
     section:before{
         content:'';
@@ -223,9 +227,8 @@
     
     </head>
     <body>
-     @include('layouts/loader')
+    
      @include('inc/navbar')
-
      <section style="">
       </section>
           <!--image slide show-->
@@ -347,7 +350,7 @@
     <script src="{{asset('/js/jquery-1.12.4.min')}}"><script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-            $("#slideshow > div:gt(0)").hide();
+           $("#slideshow > div:gt(0)").hide();
 
         setInterval(function() { 
           $('#slideshow > div:first')
@@ -369,8 +372,8 @@
             .appendTo('#slideshow-text');
         },  3000);
         setTimeout(function(){
-            $('loader_bg').fadeToggle();
-                },1500);
+            $('.loader_bg').fadeToggle();
+                },1000); 
     </script>
      @section('contents')
     @section('extra_js')

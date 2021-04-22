@@ -2,6 +2,13 @@
 
 
 @section('contents')
+
+@include('layouts/loader')
+<script>
+setTimeout(function(){
+            $('.loader_bg').fadeToggle();
+                },100); 
+</script>
         @include('inc/navbar')
         <div class="mt-16">
                 <div class="">
@@ -265,4 +272,6 @@
 })();
 */
 </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 @endsection

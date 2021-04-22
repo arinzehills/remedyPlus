@@ -124,6 +124,6 @@ position: absolute;
 <script src="{{asset('js/jquery-1.12.4.min')}}"><script>
 <script>
         setTimeout(function(){
-            $('loader_bg').fadeToggle();
+            $('.loader_bg').fadeToggle();
                 },1500);
 </script>

@@ -3,6 +3,13 @@
 
 @section('contents')
 @include('inc/navbar')
+
+@include('layouts/loader')
+<script>
+setTimeout(function(){
+            $('.loader_bg').fadeToggle();
+                },1500); 
+</script>
         <div class="mt-20 md:ml-32  md:grid md:grid-cols-3 gap-4">  
   <div class="...">  <h1 class="font-bold md:ml-32 ml-4 uppercase text-xl" >Checkout<h1></div>
 

@@ -3,6 +3,13 @@
 
 @section('contents')
 @include('inc/navbar')
+
+@include('layouts/loader')
+<script>
+setTimeout(function(){
+            $('.loader_bg').fadeToggle();
+                },1500); 
+</script>
         <style>
         h1{
            font-size: 30px;
