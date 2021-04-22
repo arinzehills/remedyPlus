@@ -51,8 +51,8 @@
           <li class="hover:text-orange text-grey-darker"><a href="#">
           <i class="fa fa-whatsapp" aria-hidden="true"></i> +2348023320671</a></li>                  
           <li class="hover:text-orange text-grey-darker">
-            <a href="#"><i class="fa fa-phone   " aria-hidden="true"></i> +2349024553530</a></li>        
-          <li class="hover:text-orange text-grey-darker"><a href="#">
+            <a href="tel:+2349024553530"><i class="fa fa-phone   " aria-hidden="true"></i> +2349024553530</a></li>        
+          <li class="hover:text-orange text-grey-darker"><a href="mailto:remedyplus2008@gmail.com">
             <i class="fa fa-envelope-o" aria-hidden="true"></i> remedyplus2008@gmail.com</a></li>
       </ul>
   </div>
